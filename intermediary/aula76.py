@@ -9,17 +9,35 @@
 # pop - delete an item with the specified key
 # popitem - delete the last added key
 # update - updates a dict with another one
-import copy
-
-d1 = {
-    'c1': 1,
-    'c2': 2,
-    'l1': [0, 1, 2],
+p1 = {
+    'first_name': 'Kauã',
+    'last_name': 'Drar',
 }
-d2 = d1.copy()
 
-d2['c1'] = 1000
-d2['l1'][1] = 999999
+# p1.update({
+#     'first_name1': 'AAAA',
+#     'last_name1': 'BBBB',
+#     'age': 123,
+# })
+# p1.update(age=123, first_name='Qualquer outro')
+variable = (1,)
+print(variable)
+p1.update(
+    (
+        ('Key', 'Value'),
+        ('Key1', 'Value1'),
+        ('Key2', 'Value1'),
+    )
+)
+print(p1)
+# print(p1.get('first_name', 'Default value'))
 
-print(d1)
-print(d2)
+# first_name = p1.pop('first_name')
+# print(first_name)
+# print(p1)
+
+# last_key = p1.popitem()
+# print(last_key)
+# last_key = p1.popitem()
+# print(last_key)
+# print(p1)
