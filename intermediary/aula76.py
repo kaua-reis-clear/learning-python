@@ -1,29 +1,24 @@
-# person = {
-#     'first_name': 'Kauã',
-#     'last_name': 'Drar',
-#     'age': 18,
-#     'height': 1.8,
-#     'addresses': [
-#         {'street': 'foo foo', 'number': 123},
-#         {'street': 'bar bar', 'number': 321},
-#     ]
-# }
-# person = dict(first_name='Kauã', last_name='Drar')
-person = {
-    'first_name': 'Kauã',
-    'last_name': 'Drar',
-    'age': 18,
-    'height': 1.8,
-    'addresses': [
-        {'street': 'foo foo', 'number': 123},
-        {'street': 'bar bar', 'number': 321},
-    ],
-}
-# print(person, type(person))
+person = {}
+
+##
+##
+
+chave = 'first_name'
+
+person[chave] = 'Kauã'
+person['first_name'] = 'Drar'
+
+
+print(person[chave])
+
+person[chave] = 'Cintia'
+
+del person['first_name']
+print(person)
 print(person['first_name'])
-print(person['last_name'])
 
-print()
-
-for key in person:
-    print(key, person[key])
+# print(person.get('first_name'))
+if person.get('first_name') is None:
+    print("DOESN'T EXIST")
+else:
+    print(person['first_name'])
