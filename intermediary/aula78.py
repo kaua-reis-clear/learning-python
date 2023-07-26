@@ -23,16 +23,24 @@
 
 # Useful methods:
 # add, update, clear, discard
-s1 = set()
-s1.add('Kauã')
-s1.add(1)
-s1.update(('Olá mundo', 1, 2, 3, 4))
-s1.discard('Olá mundo')
-s1.discard('Kauã')
-print(s1)
+# s1 = set()
+# s1.add('Kauã')
+# s1.add(1)
+# s1.update(('Olá mundo', 1, 2, 3, 4))
+# s1.discard('Olá mundo') 
+# s1.discard('Kauã')
+# print(s1)
 
 # Useful operators:
-# union - unites
-# intersection - items present in both
-# difference - items present just in left set
-# symmetric_difference - items that are not present in both
+# union | - unites
+# intersection & - items present in both
+# difference - - items present just in left set
+# symmetric_difference ^ - items that are not present in both
+
+s1 = {1, 2, 3}
+s2 = {2, 3, 4}
+s3 = s1 | s2
+s3 = s1 & s2
+s3 = s1 - s2
+s3 = s1 ^ s2
+print(s3)
