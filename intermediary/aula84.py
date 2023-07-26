@@ -1,3 +1,8 @@
+import pprint
+
+def p(v):
+    pprint.pprint(v, sort_dicts=False, width=40)
+
 my_list = []
 
 for number in range(10):
@@ -10,8 +15,8 @@ my_list = [
     for number in range(10)
 ]
 
-print(list(range(10)))
-print(my_list)
+# print(list(range(10)))
+# print(my_list)
 
 # Mapping data in list comprehension
 products = [
@@ -24,7 +29,7 @@ new_products = [
   {**product, 'price': product['price'] * 1.05}
   if product['price'] > 20 else {**product}
   for product in products
+  if (product['price'] >= 20 and product['price'] * 1.05) > 10
 ]
 
-print(new_products)
-print(*new_products, sep='\n')
+p(new_products)
