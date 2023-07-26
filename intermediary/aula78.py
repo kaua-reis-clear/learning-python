@@ -23,6 +23,13 @@
 
 # Useful methods:
 # add, update, clear, discard
+s1 = set()
+s1.add('Kauã')
+s1.add(1)
+s1.update(('Olá mundo', 1, 2, 3, 4))
+s1.discard('Olá mundo')
+s1.discard('Kauã')
+print(s1)
 
 # Useful operators:
 # union - unites
