@@ -1,24 +1,25 @@
-person = {}
+# Métodos úteis dos dicionários em Python
+# len - how many keys
+# keys - iterable with dict keys
+# values - iterable with dict values
+# items - iterable with keys and values
+# setdefault - set value if key doesn't exists
+# copy - returns a shallow copy
+# get - gets a key
+# pop - delete an item with the specified key
+# popitem - delete the last added key
+# update - updates a dict with another one
+import copy
 
-##
-##
+d1 = {
+    'c1': 1,
+    'c2': 2,
+    'l1': [0, 1, 2],
+}
+d2 = d1.copy()
 
-chave = 'first_name'
+d2['c1'] = 1000
+d2['l1'][1] = 999999
 
-person[chave] = 'Kauã'
-person['first_name'] = 'Drar'
-
-
-print(person[chave])
-
-person[chave] = 'Cintia'
-
-del person['first_name']
-print(person)
-print(person['first_name'])
-
-# print(person.get('first_name'))
-if person.get('first_name') is None:
-    print("DOESN'T EXIST")
-else:
-    print(person['first_name'])
+print(d1)
+print(d2)
