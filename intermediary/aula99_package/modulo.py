@@ -3,7 +3,7 @@
 #     'module_sum',
 #     'new_variable',
 # ]
-from aula99_package.modulo_b import say_hi
+# from aula99_package.modulo_b import say_hi
 
 variable = 'Something'
 

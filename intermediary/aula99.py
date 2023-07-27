@@ -13,7 +13,12 @@
 # print(variable)
 # print(new_variable)
 
-from aula99_package.modulo import say_hi, module_sum
+# from aula99_package.modulo import say_hi, module_sum
 
-print(__name__)
+# print(__name__)
+# say_hi()
+
+from aula99_package import say_hi, module_sum
+
+print(module_sum(2, 3))
 say_hi()
