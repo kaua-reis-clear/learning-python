@@ -1,4 +1,3 @@
-# Variáveis livres + nonlocal (locals, globals)
 # print(globals())
 # def outside(x):
 #     a = x
