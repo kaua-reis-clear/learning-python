@@ -1,4 +1,4 @@
-# Creating files with Python + Context Manager with
+# with open (context manager) and TextIOWrapper useful methods
 # We use open function to open
 # a file in Python (it may or may not exist)
 # Behaviors:
@@ -21,6 +21,27 @@ file_path = 'aula116.txt'
 # file = open(file_path, 'w')
 # #
 # file.close()
-with open(file_path, 'w') as file:
-    print('Hello world')
-    print('File will be closed')
+with open(file_path, 'w+') as file:
+    file.write('Line 1\n')
+    file.write('Line 2\n')
+    file.writelines(
+        ('Line 3\n', 'Line 4\n')
+    )
+    file.seek(0, 0)
+    print(file.read())
+    print('Reading')
+    file.seek(0, 0)
+    print(file.readline(), end='')
+    print(file.readline().strip())
+    print(file.readline().strip())
+
+    print('READLINES')
+    file.seek(0, 0)
+    for line in file.readlines():
+        print(line.strip())
+
+
+print('#' * 10)
+
+with open(file_path, 'r') as file:
+    print(file.read())
