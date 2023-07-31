@@ -1,3 +1,4 @@
+import os
 # with open (context manager) and TextIOWrapper useful methods
 # We use open function to open
 # a file in Python (it may or may not exist)
@@ -54,3 +55,6 @@ with open(file_path, 'w', encoding='utf8') as file:
     file.writelines(
         ('Line 3\n', 'Line 4\n')
     )
+
+# os.remove(file_path) # ou unlink
+# os.rename(file_path, 'aula116-2.txt')
