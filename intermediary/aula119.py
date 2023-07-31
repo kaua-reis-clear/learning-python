@@ -1,4 +1,5 @@
 import os
+import json
 
 
 def list_tasks(tasks):
@@ -51,7 +52,26 @@ def add(task, tasks):
     list_tasks(tasks)
 
 
-tasks = []
+def read(tasks, file_path):
+    data = []
+    try:
+        with open(file_path, 'r', encoding='utf8') as file:
+            data = json.load(file)
+    except FileNotFoundError:
+        print('File does not exist')
+        save(tasks, file_path)
+    return data
+
+
+def save(tasks, file_path):
+    data = tasks
+    with open(file_path, 'w', encoding='utf8') as file:
+        data = json.dump(tasks, file, indent=2, ensure_ascii=False)
+    return data
+
+
+FILE_PATH = 'aula119.json'
+tasks = read([], FILE_PATH)
 redo_tasks = []
 
 while True:
@@ -65,9 +85,10 @@ while True:
         'clear': lambda: os.system('clear'),
         'add': lambda: add(task, tasks),
     }
-    comando = commands.get(task) if commands.get(task) is not None else \
+    command = commands.get(task) if commands.get(task) is not None else \
         commands['add']
-    comando()
+    command()
+    save(tasks, FILE_PATH)
 
     # if task == 'list':
     #     list_tasks(tasks)
